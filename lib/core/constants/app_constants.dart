@@ -52,19 +52,19 @@ class AppConstants {
   static const double borderRadiusSmall = 2.0;
   static const double borderRadiusMedium = 8.0;
   static const double strokeWidthSmall = 2.0;
-  
+
   // Navigation constants
   static const int tabTasks = 0;
   static const int tabStats = 1;
-  
+
   // Notification constants
   static const int hexMask = 0x7FFFFFFF; // Safe 32-bit mask
-  
+
   // Logger constants
   static const int loggerMethodCount = 2;
   static const int loggerErrorMethodCount = 8;
   static const int loggerLineLength = 120;
-  
+
   // Mock service constants
   static const Duration mockServiceDelay = Duration(milliseconds: 800);
   static const int temperatureMin = 5;
@@ -72,20 +72,20 @@ class AppConstants {
   static const int humidityMin = 40;
   static const int humidityRange = 40; // 40-80%
   static const double windSpeedMax = 10.0; // 0-10 m/s
-  
+
   // Time comparison constants
   static const int singleDayDifference = 1;
   static const int singleHour = 1;
   static const int singleMinute = 1;
   static const int minValue = 0;
   static const int initialStreak = 1;
-  
+
   // UI spacing constants
   static const double spacing_1 = 1.0;
-  
-  // Border width constants  
+
+  // Border width constants
   static const double borderWidth_1 = 1.0;
-  
+
   static const int httpStatusOk = 200;
   static const int apiKeyPreviewLength = 8;
   static const int datePadLength = 2;
@@ -95,8 +95,8 @@ class AppConstants {
   static const String completedTaskBoxName = 'completed_tasks';
 
   // Weather API constants
-  static const Duration weatherTimeout = Duration(seconds: 10);
-  static const Duration locationTimeout = Duration(seconds: 10);
+  static const Duration weatherTimeout = Duration(seconds: 30);
+  static const Duration locationTimeout = Duration(seconds: 15);
 
   // String constants
   static const String demoText = 'DEMO';
@@ -106,7 +106,7 @@ class AppConstants {
   // Day keys for localization
   static const List<String> dayKeys = [
     'mondayFull',
-    'tuesdayFull', 
+    'tuesdayFull',
     'wednesdayFull',
     'thursdayFull',
     'fridayFull',

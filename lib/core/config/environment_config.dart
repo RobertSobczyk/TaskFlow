@@ -15,7 +15,9 @@ class EnvironmentConfig {
       AppLogger.info('EnvironmentConfig: Successfully loaded .env file');
     } catch (e) {
       AppLogger.warning('EnvironmentConfig: Could not load .env file - $e');
-      AppLogger.info('EnvironmentConfig: Will use platform environment variables or defaults');
+      AppLogger.info(
+        'EnvironmentConfig: Will use platform environment variables or defaults',
+      );
     }
 
     _isLoaded = true;
@@ -39,10 +41,14 @@ class EnvironmentConfig {
 
   static String get weatherApiKey {
     final envKey = get('WEATHER_API_KEY');
-    
+
     if (envKey.isEmpty) {
-      AppLogger.error('EnvironmentConfig: WEATHER_API_KEY not found in environment or .env file!');
-      AppLogger.info('EnvironmentConfig: Please create .env file with WEATHER_API_KEY=your_key_here');
+      AppLogger.error(
+        'EnvironmentConfig: WEATHER_API_KEY not found in environment or .env file!',
+      );
+      AppLogger.info(
+        'EnvironmentConfig: Please create .env file with WEATHER_API_KEY=your_key_here',
+      );
       return 'demo_key'; // Fallback to demo mode if no key provided
     }
 
@@ -51,7 +57,9 @@ class EnvironmentConfig {
       return 'demo_key';
     }
 
-    AppLogger.debug('EnvironmentConfig: Using API key from environment (${envKey.length} chars)');
+    AppLogger.debug(
+      'EnvironmentConfig: Using API key from environment (${envKey.length} chars)',
+    );
     return envKey;
   }
 

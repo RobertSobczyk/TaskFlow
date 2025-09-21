@@ -61,7 +61,9 @@ class _WeatherWidgetState extends State<WeatherWidget> {
           SizedBox(
             width: AppConstants.spacing_16,
             height: AppConstants.spacing_16,
-            child: const CircularProgressIndicator(strokeWidth: AppConstants.strokeWidthSmall),
+            child: const CircularProgressIndicator(
+              strokeWidth: AppConstants.strokeWidthSmall,
+            ),
           ),
           const SizedBox(width: AppConstants.spacing_8),
           Text(
@@ -90,10 +92,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
           ),
           const SizedBox(width: AppConstants.spacing_8),
           IconButton(
-            icon: Icon(
-              Icons.refresh,
-              size: AppConstants.spacing_20,
-            ),
+            icon: Icon(Icons.refresh, size: AppConstants.spacing_20),
             onPressed: _loadWeather,
             tooltip: AppLocalizations.of(context)!.refreshWeatherTooltip,
           ),
@@ -116,9 +115,9 @@ class _WeatherWidgetState extends State<WeatherWidget> {
           children: [
             Text(
               weather.temperatureString,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
             Row(
               children: [
@@ -128,9 +127,8 @@ class _WeatherWidgetState extends State<WeatherWidget> {
                     weather.description,
                   ),
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Theme.of(context).textTheme.bodySmall?.color?.withValues(
-                      alpha: AppConstants.alphaMedium,
-                    ),
+                    color: Theme.of(context).textTheme.bodySmall?.color
+                        ?.withValues(alpha: AppConstants.alphaMedium),
                   ),
                 ),
                 if (EnvironmentConfig.isDemoMode) ...[
@@ -144,7 +142,9 @@ class _WeatherWidgetState extends State<WeatherWidget> {
                       color: Theme.of(context).colorScheme.primary.withValues(
                         alpha: AppConstants.alphaDisabled,
                       ),
-                      borderRadius: BorderRadius.circular(AppConstants.borderRadiusSmall),
+                      borderRadius: BorderRadius.circular(
+                        AppConstants.borderRadiusSmall,
+                      ),
                     ),
                     child: Text(
                       AppConstants.demoText,
@@ -158,14 +158,19 @@ class _WeatherWidgetState extends State<WeatherWidget> {
                 ],
               ],
             ),
+            // City name
+            Text(
+              weather.cityName,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: Theme.of(context).colorScheme.outline,
+                fontSize: AppConstants.fontSize_10,
+              ),
+            ),
           ],
         ),
         const SizedBox(width: AppConstants.spacing_8),
         IconButton(
-          icon: Icon(
-            Icons.refresh,
-            size: AppConstants.spacing_16,
-          ),
+          icon: Icon(Icons.refresh, size: AppConstants.spacing_16),
           onPressed: _loadWeather,
           tooltip: AppLocalizations.of(context)!.refreshWeatherTooltip,
         ),
