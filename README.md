@@ -1,9 +1,5 @@
 # task_flow
 
-A new Flutter project.
-
-## Getting Started
-
 ## TaskFlow - Task Management App 📱
 
 A comprehensive Flutter todo application with advanced features including statistics, weather integration, and multi-language support.
