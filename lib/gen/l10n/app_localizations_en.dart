@@ -107,4 +107,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get darkTheme => 'Dark Theme';
+
+  @override
+  String get notificationTitle => 'Task Reminder';
+
+  @override
+  String notificationBody(String taskTitle) {
+    return 'Don\'t forget: $taskTitle';
+  }
+
+  @override
+  String get notificationChannelName => 'Task Reminders';
+
+  @override
+  String get notificationChannelDescription =>
+      'Reminders for upcoming task deadlines';
 }

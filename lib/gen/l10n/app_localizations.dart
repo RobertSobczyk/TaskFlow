@@ -289,6 +289,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Dark Theme'**
   String get darkTheme;
+
+  /// Title for task reminder notifications
+  ///
+  /// In en, this message translates to:
+  /// **'Task Reminder'**
+  String get notificationTitle;
+
+  /// Body text for task reminder notifications
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t forget: {taskTitle}'**
+  String notificationBody(String taskTitle);
+
+  /// Name of the notification channel for task reminders
+  ///
+  /// In en, this message translates to:
+  /// **'Task Reminders'**
+  String get notificationChannelName;
+
+  /// Description of the notification channel for task reminders
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders for upcoming task deadlines'**
+  String get notificationChannelDescription;
 }
 
 class _AppLocalizationsDelegate

@@ -108,4 +108,19 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get darkTheme => 'Motyw Ciemny';
+
+  @override
+  String get notificationTitle => 'Przypomnienie o Zadaniu';
+
+  @override
+  String notificationBody(String taskTitle) {
+    return 'Nie zapomnij: $taskTitle';
+  }
+
+  @override
+  String get notificationChannelName => 'Przypomnienia o Zadaniach';
+
+  @override
+  String get notificationChannelDescription =>
+      'Przypomnienia o zbliżających się terminach zadań';
 }

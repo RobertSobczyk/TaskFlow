@@ -137,7 +137,14 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
       deadline: deadline,
     );
 
-    await TaskService.addTask(task);
+    final l10n = AppLocalizations.of(context)!;
+    await TaskService.addTask(
+      task,
+      notificationTitle: l10n.notificationTitle,
+      notificationBody: l10n.notificationBody(task.title),
+      notificationChannelName: l10n.notificationChannelName,
+      notificationChannelDescription: l10n.notificationChannelDescription,
+    );
 
     if (mounted) {
       Navigator.pop(context);

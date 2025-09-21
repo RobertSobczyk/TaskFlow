@@ -147,7 +147,14 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
       deadline: deadline,
     );
 
-    await TaskService.updateTask(updatedTask);
+    final l10n = AppLocalizations.of(context)!;
+    await TaskService.updateTask(
+      updatedTask,
+      notificationTitle: l10n.notificationTitle,
+      notificationBody: l10n.notificationBody(updatedTask.title),
+      notificationChannelName: l10n.notificationChannelName,
+      notificationChannelDescription: l10n.notificationChannelDescription,
+    );
 
     if (mounted) {
       Navigator.pop(context, true);

@@ -54,5 +54,26 @@
   "darkTheme": "Dark Theme",
   "@darkTheme": {
     "description": "Dark theme option in settings"
+  },
+  "notificationTitle": "Task Reminder",
+  "@notificationTitle": {
+    "description": "Title for task reminder notifications"
+  },
+  "notificationBody": "Don't forget: {taskTitle}",
+  "@notificationBody": {
+    "description": "Body text for task reminder notifications",
+    "placeholders": {
+      "taskTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationChannelName": "Task Reminders",
+  "@notificationChannelName": {
+    "description": "Name of the notification channel for task reminders"
+  },
+  "notificationChannelDescription": "Reminders for upcoming task deadlines",
+  "@notificationChannelDescription": {
+    "description": "Description of the notification channel for task reminders"
   }
 }

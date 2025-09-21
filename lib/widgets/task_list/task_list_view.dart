@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../../core/constants/app_constants.dart';
-import '../../gen/l10n/app_localizations.dart';
-import '../../models/task.dart';
-import '../../services/task_service.dart';
+import 'package:task_flow/core/constants/app_constants.dart';
+import 'package:task_flow/core/logging/app_logger.dart';
+import 'package:task_flow/gen/l10n/app_localizations.dart';
+import 'package:task_flow/models/task.dart';
+import 'package:task_flow/services/task_service.dart';
+
 import 'edit_task_dialog.dart';
 import 'confirm_delete_dialog.dart';
 
@@ -33,10 +35,12 @@ class TaskListViewState extends State<TaskListView> {
   }
 
   void _loadTasks() {
+    AppLogger.debug('Loading tasks');
     setState(() {
       tasks = TaskService.getAllTasks();
       completedTasks = TaskService.getCompletedTasks();
     });
+    AppLogger.info('Tasks loaded: ${tasks.length} active, ${completedTasks.length} completed');
   }
 
   void refreshTasks() {
@@ -120,10 +124,24 @@ class TaskListViewState extends State<TaskListView> {
   }
 
   void _toggleTask(Task task) async {
+    AppLogger.debug('Toggling task: ${task.title} -> ${!task.isDone}');
+    final l10n = AppLocalizations.of(context)!;
     if (task.isDone) {
-      await TaskService.markAsNotCompleted(task.id);
+      await TaskService.markAsNotCompleted(
+        task.id,
+        notificationTitle: l10n.notificationTitle,
+        notificationBody: l10n.notificationBody(task.title),
+        notificationChannelName: l10n.notificationChannelName,
+        notificationChannelDescription: l10n.notificationChannelDescription,
+      );
     } else {
-      await TaskService.markAsCompleted(task.id);
+      await TaskService.markAsCompleted(
+        task.id,
+        notificationTitle: l10n.notificationTitle,
+        notificationBody: l10n.notificationBody(task.title),
+        notificationChannelName: l10n.notificationChannelName,
+        notificationChannelDescription: l10n.notificationChannelDescription,
+      );
     }
     _loadTasks();
   }

@@ -54,5 +54,26 @@
   "darkTheme": "Motyw Ciemny",
   "@darkTheme": {
     "description": "Opcja motywu ciemnego w ustawieniach"
+  },
+  "notificationTitle": "Przypomnienie o Zadaniu",
+  "@notificationTitle": {
+    "description": "Tytuł powiadomienia przypominającego o zadaniu"
+  },
+  "notificationBody": "Nie zapomnij: {taskTitle}",
+  "@notificationBody": {
+    "description": "Treść powiadomienia przypominającego o zadaniu",
+    "placeholders": {
+      "taskTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationChannelName": "Przypomnienia o Zadaniach",
+  "@notificationChannelName": {
+    "description": "Nazwa kanału powiadomień dla przypomnień o zadaniach"
+  },
+  "notificationChannelDescription": "Przypomnienia o zbliżających się terminach zadań",
+  "@notificationChannelDescription": {
+    "description": "Opis kanału powiadomień dla przypomnień o zadaniach"
   }
 }
