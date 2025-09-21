@@ -188,7 +188,7 @@ class _ProductivityChartWidgetState extends State<ProductivityChartWidget> {
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
+          color: Theme.of(context).colorScheme.outline.withValues(alpha: AppConstants.alphaDisabled),
         ),
       ),
       child: Row(
@@ -208,15 +208,15 @@ class _ProductivityChartWidgetState extends State<ProductivityChartWidget> {
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: Theme.of(
                     context,
-                  ).textTheme.bodySmall?.color?.withValues(alpha: 0.7),
+                  ).textTheme.bodySmall?.color?.withValues(alpha: AppConstants.alphaMedium),
                 ),
               ),
             ],
           ),
           Container(
             width: 1,
-            height: 30,
-            color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
+            height: AppConstants.chartLegendHeight,
+            color: Theme.of(context).colorScheme.outline.withValues(alpha: AppConstants.alphaDisabled),
           ),
           Column(
             children: [
@@ -232,7 +232,7 @@ class _ProductivityChartWidgetState extends State<ProductivityChartWidget> {
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: Theme.of(
                     context,
-                  ).textTheme.bodySmall?.color?.withValues(alpha: 0.7),
+                  ).textTheme.bodySmall?.color?.withValues(alpha: AppConstants.alphaMedium),
                 ),
               ),
             ],

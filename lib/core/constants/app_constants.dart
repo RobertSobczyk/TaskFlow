@@ -31,8 +31,9 @@ class AppConstants {
   static const Duration defaultTaskDeadlineOffset = Duration(days: 1);
   static const Duration dateRangeExtension = Duration(days: 365);
 
-  // Colors indices for grey palette
+  // Colors indices for palette
   static const int greyColorIndex = 600;
+  static const int orangeColorIndex = 600;
 
   // Stats UI constants
   static const int statsGridColumns = 2;
@@ -40,6 +41,7 @@ class AppConstants {
   static const double statsIconSize = 24.0;
   static const double statsLargeIconSize = 32.0;
   static const double statsExtraLargeIconSize = 48.0;
+  static const double statsHugeIconSize = 64.0;
   static const double completionRateCircleSize = 60.0;
   static const double completionRateStrokeWidth = 6.0;
   static const double chartHeight = 100.0;
@@ -47,7 +49,8 @@ class AppConstants {
   static const double chartBarHeightOffset = 30.0;
   static const double chartBarMinHeight = 4.0;
   static const double chartBorderRadius = 4.0;
-  
+  static const double chartLegendHeight = 30.0;
+
   // Stats calculation constants
   static const int recentlyCompletedLimit = 5;
   static const int daysForAverage = 30;
@@ -55,13 +58,12 @@ class AppConstants {
   static const int weekdayStartIndex = 1; // Monday
   static const int todayIndex = 6; // Last day in weekly array
   static const double percentageMultiplier = 100.0;
-  
+
   // Alpha values
   static const double alphaDisabled = 0.2;
-  static const double alphaSecondary = 0.5;
+  static const double alphaLow = 0.5;
   static const double alphaMedium = 0.7;
   static const double alphaHigh = 0.8;
-
 
   // Database box names
   static const String taskBoxName = 'tasks';

@@ -35,7 +35,7 @@ class RecentTasksWidget extends StatelessWidget {
                         Icons.inbox,
                         size: AppConstants.statsExtraLargeIconSize,
                         color: Theme.of(context).colorScheme.outline.withValues(
-                          alpha: AppConstants.alphaSecondary,
+                          alpha: AppConstants.alphaLow,
                         ),
                       ),
                       const SizedBox(height: AppConstants.spacing_12),
@@ -51,7 +51,7 @@ class RecentTasksWidget extends StatelessWidget {
                         l10n.startCompletingTasks,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).textTheme.bodySmall?.color
-                              ?.withValues(alpha: AppConstants.alphaSecondary),
+                              ?.withValues(alpha: AppConstants.alphaLow),
                         ),
                       ),
                     ],
@@ -144,14 +144,14 @@ class RecentTasksWidget extends StatelessWidget {
                     Icons.access_time,
                     size: AppConstants.spacing_12,
                     color: Theme.of(context).textTheme.bodySmall?.color
-                        ?.withValues(alpha: AppConstants.alphaSecondary),
+                        ?.withValues(alpha: AppConstants.alphaLow),
                   ),
                   const SizedBox(width: AppConstants.spacing_4),
                   Text(
                     _formatCompletedTime(task.completedAt!, context),
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: Theme.of(context).textTheme.bodySmall?.color
-                          ?.withValues(alpha: AppConstants.alphaSecondary),
+                          ?.withValues(alpha: AppConstants.alphaLow),
                     ),
                   ),
                 ],
@@ -163,7 +163,7 @@ class RecentTasksWidget extends StatelessWidget {
           ? Icon(
               Icons.schedule,
               size: AppConstants.spacing_16,
-              color: Colors.orange[600],
+              color: Colors.orange[AppConstants.orangeColorIndex],
             )
           : null,
     );

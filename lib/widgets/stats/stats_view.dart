@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_flow/core/constants/app_constants.dart';
 import 'package:task_flow/gen/l10n/app_localizations.dart';
 import 'package:task_flow/services/stats_service.dart';
 
@@ -73,7 +74,7 @@ class _StatsViewState extends State<StatsView> {
           children: [
             Icon(
               Icons.error_outline,
-              size: 64,
+              size: AppConstants.statsHugeIconSize,
               color: Theme.of(context).colorScheme.error,
             ),
             const SizedBox(height: 16),
@@ -102,13 +103,13 @@ class _StatsViewState extends State<StatsView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             StatsOverviewWidget(stats: _stats!),
-            const SizedBox(height: 24),
+            const SizedBox(height: AppConstants.spacing_24),
 
             StreakWidget(stats: _stats!),
-            const SizedBox(height: 24),
+            const SizedBox(height: AppConstants.spacing_24),
 
             ProductivityChartWidget(stats: _stats!),
-            const SizedBox(height: 24),
+            const SizedBox(height: AppConstants.spacing_24),
 
             RecentTasksWidget(stats: _stats!),
             const SizedBox(height: 16),

@@ -149,7 +149,7 @@ class StatsOverviewWidget extends StatelessWidget {
                 strokeWidth: AppConstants.completionRateStrokeWidth,
                 backgroundColor: Theme.of(
                   context,
-                ).colorScheme.outline.withValues(alpha: 0.2),
+                ).colorScheme.outline.withValues(alpha: AppConstants.alphaDisabled),
                 valueColor: AlwaysStoppedAnimation<Color>(
                   Theme.of(context).colorScheme.primary,
                 ),
