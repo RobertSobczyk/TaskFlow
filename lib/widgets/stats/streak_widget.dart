@@ -28,11 +28,11 @@ class StreakWidget extends StatelessWidget {
                 context: context,
                 title: l10n.currentStreak,
                 value: stats.currentStreak,
-                subtitle: stats.currentStreak == 1
+                subtitle: stats.currentStreak == AppConstants.singleDayDifference
                     ? l10n.dayText
                     : l10n.daysText,
                 icon: Icons.local_fire_department,
-                color: stats.currentStreak > 0 ? Colors.orange : Colors.grey,
+                color: stats.currentStreak > AppConstants.minValue ? Colors.orange : Colors.grey,
               ),
             ),
             const SizedBox(width: AppConstants.spacing_12),
@@ -41,7 +41,7 @@ class StreakWidget extends StatelessWidget {
                 context: context,
                 title: l10n.longestStreak,
                 value: stats.longestStreak,
-                subtitle: stats.longestStreak == 1
+                subtitle: stats.longestStreak == AppConstants.singleDayDifference
                     ? l10n.dayText
                     : l10n.daysText,
                 icon: Icons.emoji_events,
@@ -154,7 +154,7 @@ class StreakWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(AppConstants.spacing_12),
               ),
               child: Text(
-                stats.averageTasksPerDay >= 1 ? l10n.good : l10n.low,
+                stats.averageTasksPerDay >= AppConstants.singleDayDifference ? l10n.good : l10n.low,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.bold,

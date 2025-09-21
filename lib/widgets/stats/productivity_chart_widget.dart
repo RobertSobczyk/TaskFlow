@@ -95,17 +95,17 @@ class _ProductivityChartWidgetState extends State<ProductivityChartWidget> {
           final value = entry.value;
           final isToday = index == AppConstants.todayIndex;
 
-          final barHeight = maxValue > 0
+          final barHeight = maxValue > AppConstants.minValue
               ? (value / maxValue) *
                     (chartHeight - AppConstants.chartBarHeightOffset)
-              : 0.0;
+              : AppConstants.minValue.toDouble();
 
           return Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (value > 0)
+                if (value > AppConstants.minValue)
                   Text(
                     value.toString(),
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -186,7 +186,7 @@ class _ProductivityChartWidgetState extends State<ProductivityChartWidget> {
       padding: const EdgeInsets.all(AppConstants.spacing_12),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppConstants.borderRadiusMedium),
         border: Border.all(
           color: Theme.of(context).colorScheme.outline.withValues(alpha: AppConstants.alphaDisabled),
         ),
@@ -214,7 +214,7 @@ class _ProductivityChartWidgetState extends State<ProductivityChartWidget> {
             ],
           ),
           Container(
-            width: 1,
+            width: AppConstants.borderWidth_1,
             height: AppConstants.chartLegendHeight,
             color: Theme.of(context).colorScheme.outline.withValues(alpha: AppConstants.alphaDisabled),
           ),

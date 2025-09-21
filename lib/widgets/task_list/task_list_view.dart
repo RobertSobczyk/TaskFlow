@@ -5,6 +5,7 @@ import 'package:task_flow/core/logging/app_logger.dart';
 import 'package:task_flow/gen/l10n/app_localizations.dart';
 import 'package:task_flow/models/task.dart';
 import 'package:task_flow/services/task_service.dart';
+import 'package:task_flow/widgets/weather/weather_widget.dart';
 
 import 'edit_task_dialog.dart';
 import 'confirm_delete_dialog.dart';
@@ -50,9 +51,7 @@ class TaskListViewState extends State<TaskListView> {
   void _startRefreshTimer() {
     _refreshTimer = Timer.periodic(AppConstants.refreshInterval, (timer) {
       if (mounted) {
-        setState(() {
-          // Refresh UI to update "Due in X hours/minutes" without reloading data
-        });
+        setState(() {});
       }
     });
   }
@@ -67,6 +66,8 @@ class TaskListViewState extends State<TaskListView> {
       child: ListView(
         padding: const EdgeInsets.all(AppConstants.spacing_16),
         children: [
+          const WeatherWidget(),
+          const SizedBox(height: AppConstants.spacing_16),
           if (tasks.isNotEmpty) ...[
             Text(
               l10n.activeTasksTitle,
@@ -255,11 +256,11 @@ class TaskTile extends StatelessWidget {
   }
 
   String _formatDuration(BuildContext context, Duration duration) {
-    if (duration.inDays > 0) {
+    if (duration.inDays > AppConstants.minValue) {
       return '${duration.inDays} ${AppLocalizations.of(context)!.daysText}';
-    } else if (duration.inHours > 0) {
+    } else if (duration.inHours > AppConstants.minValue) {
       return '${duration.inHours} ${AppLocalizations.of(context)!.hoursText}';
-    } else if (duration.inMinutes > 0) {
+    } else if (duration.inMinutes > AppConstants.minValue) {
       return '${duration.inMinutes} ${AppLocalizations.of(context)!.minutesText}';
     } else {
       return AppLocalizations.of(context)!.nowText;

@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:task_flow/core/logging/app_logger.dart';
+import 'package:task_flow/core/constants/app_constants.dart';
 import 'gen/l10n/app_localizations.dart';
 import 'models/task.dart';
 import 'services/task_service.dart';
@@ -13,11 +14,16 @@ import 'widgets/settings/settings_view.dart';
 import 'widgets/task_list/task_list_view.dart';
 import 'widgets/task_list/add_task_dialog.dart';
 import 'widgets/stats/stats_view.dart';
+import 'core/config/environment_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   AppLogger.info('TaskFlow app starting...');
+
+  // Load environment configuration
+  await EnvironmentConfig.load();
+  AppLogger.info('Environment configuration loaded');
 
   tz.initializeTimeZones();
   AppLogger.info('Timezone initialized');
@@ -95,7 +101,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<TaskListViewState> _taskListKey = GlobalKey();
-  int _selectedIndex = 0;
+  int _selectedIndex = AppConstants.tabTasks;
 
   void _showAddTaskDialog(BuildContext context) async {
     await showDialog(
@@ -106,9 +112,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _onItemTapped(int index) {
+    final previousIndex = _selectedIndex;
     setState(() {
       _selectedIndex = index;
     });
+
+    // Refresh stats when switching to stats tab
+    if (index == AppConstants.tabStats &&
+        previousIndex != AppConstants.tabStats) {
+      StatsView.refreshFromExternal();
+    }
   }
 
   List<Widget> get _pages => [
@@ -119,11 +132,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(_selectedIndex == 0 ? l10n.appTitle : l10n.statistics),
+        title: Text(
+          _selectedIndex == AppConstants.tabTasks
+              ? l10n.appTitle
+              : l10n.statistics,
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -133,15 +150,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _pages,
-      ),
+      body: IndexedStack(index: _selectedIndex, children: _pages),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
             icon: const Icon(Icons.task_alt),
-            label: l10n.activeTasksTitle,
+            label: l10n.tasksTitle,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.analytics),
@@ -151,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
-      floatingActionButton: _selectedIndex == 0 
+      floatingActionButton: _selectedIndex == AppConstants.tabTasks
           ? FloatingActionButton(
               onPressed: () => _showAddTaskDialog(context),
               child: const Icon(Icons.add),

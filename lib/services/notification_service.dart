@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:task_flow/core/constants/app_constants.dart';
 import 'package:task_flow/core/logging/app_logger.dart';
 import 'package:task_flow/models/task.dart';
 import 'package:timezone/timezone.dart' as tz;
@@ -8,12 +9,9 @@ class NotificationService {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  /// Convert task ID to a safe 32-bit integer for notification ID
   static int _getNotificationId(String taskId) {
-    // Use a simple hash that fits in 32-bit signed integer range
     int hash = taskId.hashCode;
-    // Ensure it's within 32-bit signed integer range
-    return hash & 0x7FFFFFFF;
+    return hash & AppConstants.hexMask;
   }
 
   static Future<void> init() async {
@@ -32,7 +30,6 @@ class NotificationService {
       },
     );
 
-    // Request permissions immediately after initialization
     final hasPermissions = await _requestPermissions();
     if (hasPermissions) {
       AppLogger.info('NotificationService: Permissions granted');
@@ -51,12 +48,10 @@ class NotificationService {
                 AndroidFlutterLocalNotificationsPlugin
               >();
 
-      // Request basic notification permissions
       final notificationPermission =
           await androidImplementation?.requestNotificationsPermission() ??
           false;
 
-      // Request exact alarm permissions for scheduled notifications (Android 12+)
       final exactAlarmPermission =
           await androidImplementation?.requestExactAlarmsPermission() ?? true;
 
@@ -69,7 +64,6 @@ class NotificationService {
     return true;
   }
 
-  /// Check current notification permissions status
   static Future<bool> arePermissionsGranted() async {
     if (defaultTargetPlatform == TargetPlatform.android) {
       final AndroidFlutterLocalNotificationsPlugin? androidImplementation =
@@ -103,11 +97,9 @@ class NotificationService {
       return;
     }
 
-    // Schedule reminder exactly at the deadline time
     final reminderDateTime = task.deadline;
     final now = DateTime.now();
 
-    // Don't schedule if reminder time is in the past
     if (reminderDateTime.isBefore(now)) {
       AppLogger.warning(
         'NotificationService: Deadline time is in the past, skipping notification for task: ${task.title}',
@@ -151,7 +143,6 @@ class NotificationService {
         'NotificationService: Failed to schedule notification for ${task.title}: $e',
       );
 
-      // Fallback: Schedule with inexact timing
       try {
         await _notificationsPlugin.zonedSchedule(
           _getNotificationId(task.id),

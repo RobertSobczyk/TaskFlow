@@ -54,9 +54,9 @@ class StatsService {
       final totalTasks = allTasks.length;
       final completedTasks = allTasks.where((task) => task.isDone).length;
       final activeTasks = totalTasks - completedTasks;
-      final completionRate = totalTasks > 0
+      final completionRate = totalTasks > AppConstants.minValue
           ? (completedTasks / totalTasks) * AppConstants.percentageMultiplier
-          : 0.0;
+          : AppConstants.minValue.toDouble();
 
       final todayCompleted = _getTasksCompletedInPeriod(
         allTasks,
@@ -100,8 +100,8 @@ class StatsService {
         todayCompleted: todayCompleted,
         weekCompleted: weekCompleted,
         monthCompleted: monthCompleted,
-        currentStreak: streaks['current'] ?? 0,
-        longestStreak: streaks['longest'] ?? 0,
+        currentStreak: streaks[AppConstants.streakCurrentKey] ?? 0,
+        longestStreak: streaks[AppConstants.streakLongestKey] ?? 0,
         averageTasksPerDay: averageTasksPerDay,
         overdueTasks: overdueTasks,
         recentlyCompleted: recentlyCompleted,
@@ -115,17 +115,17 @@ class StatsService {
     } catch (e) {
       AppLogger.error('StatsService: Error calculating statistics: $e');
       return TaskStats(
-        totalTasks: 0,
-        completedTasks: 0,
-        activeTasks: 0,
-        completionRate: 0.0,
-        todayCompleted: 0,
-        weekCompleted: 0,
-        monthCompleted: 0,
-        currentStreak: 0,
-        longestStreak: 0,
-        averageTasksPerDay: 0.0,
-        overdueTasks: 0,
+        totalTasks: AppConstants.minValue,
+        completedTasks: AppConstants.minValue,
+        activeTasks: AppConstants.minValue,
+        completionRate: AppConstants.minValue.toDouble(),
+        todayCompleted: AppConstants.minValue,
+        weekCompleted: AppConstants.minValue,
+        monthCompleted: AppConstants.minValue,
+        currentStreak: AppConstants.minValue,
+        longestStreak: AppConstants.minValue,
+        averageTasksPerDay: AppConstants.minValue.toDouble(),
+        overdueTasks: AppConstants.minValue,
         recentlyCompleted: [],
         completionByDay: {},
       );
@@ -150,14 +150,14 @@ class StatsService {
         .toList();
 
     if (completedTasks.isEmpty) {
-      return {'current': 0, 'longest': 0};
+      return {AppConstants.streakCurrentKey: 0, AppConstants.streakLongestKey: 0};
     }
 
     final Map<String, List<Task>> tasksByDate = {};
     for (final task in completedTasks) {
       final date = task.completedAt!;
       final dateKey =
-          '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
+          '${date.year}-${date.month.toString().padLeft(AppConstants.datePadLength, '0')}-${date.day.toString().padLeft(AppConstants.datePadLength, '0')}';
       tasksByDate.putIfAbsent(dateKey, () => []).add(task);
     }
 
@@ -171,22 +171,22 @@ class StatsService {
     }).toList()..sort();
 
     if (completionDates.isEmpty) {
-      return {'current': 0, 'longest': 0};
+      return {AppConstants.streakCurrentKey: AppConstants.minValue, AppConstants.streakLongestKey: AppConstants.minValue};
     }
 
-    int currentStreak = 0;
-    int longestStreak = 0;
-    int tempStreak = 1;
+    int currentStreak = AppConstants.minValue;
+    int longestStreak = AppConstants.minValue;
+    int tempStreak = AppConstants.initialStreak;
 
     final todayKey =
-        '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+        '${today.year}-${today.month.toString().padLeft(AppConstants.datePadLength, '0')}-${today.day.toString().padLeft(AppConstants.datePadLength, '0')}';
     if (tasksByDate.containsKey(todayKey)) {
-      currentStreak = 1;
+      currentStreak = AppConstants.initialStreak;
       DateTime checkDate = today.subtract(Duration(days: 1));
 
       while (true) {
         final checkKey =
-            '${checkDate.year}-${checkDate.month.toString().padLeft(2, '0')}-${checkDate.day.toString().padLeft(2, '0')}';
+            '${checkDate.year}-${checkDate.month.toString().padLeft(AppConstants.datePadLength, '0')}-${checkDate.day.toString().padLeft(AppConstants.datePadLength, '0')}';
         if (tasksByDate.containsKey(checkKey)) {
           currentStreak++;
           checkDate = checkDate.subtract(Duration(days: 1));
@@ -196,20 +196,20 @@ class StatsService {
       }
     }
 
-    for (int i = 1; i < completionDates.length; i++) {
-      final prevDate = completionDates[i - 1];
+    for (int i = AppConstants.initialStreak; i < completionDates.length; i++) {
+      final prevDate = completionDates[i - AppConstants.initialStreak];
       final currentDate = completionDates[i];
 
-      if (currentDate.difference(prevDate).inDays == 1) {
+      if (currentDate.difference(prevDate).inDays == AppConstants.singleDayDifference) {
         tempStreak++;
       } else {
         longestStreak = tempStreak > longestStreak ? tempStreak : longestStreak;
-        tempStreak = 1;
+        tempStreak = AppConstants.initialStreak;
       }
     }
     longestStreak = tempStreak > longestStreak ? tempStreak : longestStreak;
 
-    return {'current': currentStreak, 'longest': longestStreak};
+    return {AppConstants.streakCurrentKey: currentStreak, AppConstants.streakLongestKey: longestStreak};
   }
 
   static double _calculateAverageTasksPerDay(List<Task> tasks, DateTime today) {
@@ -239,17 +239,8 @@ class StatsService {
   }
 
   static Map<String, int> _getCompletionByDayOfWeek(List<Task> tasks) {
-    final dayNames = [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday',
-    ];
     final Map<String, int> completionByDay = {
-      for (String day in dayNames) day: 0,
+      for (String dayKey in AppConstants.dayKeys) dayKey: AppConstants.minValue,
     };
 
     final completedTasks = tasks.where(
@@ -257,9 +248,9 @@ class StatsService {
     );
 
     for (final task in completedTasks) {
-      final dayOfWeek = task.completedAt!.weekday - 1;
-      final dayName = dayNames[dayOfWeek];
-      completionByDay[dayName] = (completionByDay[dayName] ?? 0) + 1;
+      final dayOfWeek = task.completedAt!.weekday - AppConstants.initialStreak;
+      final dayKey = AppConstants.dayKeys[dayOfWeek];
+      completionByDay[dayKey] = (completionByDay[dayKey] ?? AppConstants.minValue) + AppConstants.initialStreak;
     }
 
     return completionByDay;
@@ -273,7 +264,7 @@ class StatsService {
       final now = DateTime.now();
       final trend = <int>[];
 
-      for (int i = 6; i >= 0; i--) {
+      for (int i = AppConstants.todayIndex; i >= AppConstants.minValue; i--) {
         final date = DateTime(
           now.year,
           now.month,
@@ -292,7 +283,7 @@ class StatsService {
       return trend;
     } catch (e) {
       AppLogger.error('StatsService: Error calculating weekly trend: $e');
-      return List.filled(7, 0);
+      return List.filled(AppConstants.daysInWeek, AppConstants.minValue);
     }
   }
 
@@ -330,12 +321,12 @@ class StatsService {
       final completedInPeriod = tasksInPeriod
           .where((task) => task.isDone)
           .length;
-      return (completedInPeriod / tasksInPeriod.length) * 100;
+      return (completedInPeriod / tasksInPeriod.length) * AppConstants.percentageMultiplier;
     } catch (e) {
       AppLogger.error(
         'StatsService: Error calculating completion rate for period: $e',
       );
-      return 0.0;
+      return AppConstants.minValue.toDouble();
     }
   }
 }

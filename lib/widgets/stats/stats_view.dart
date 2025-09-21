@@ -11,6 +11,17 @@ import 'recent_tasks_widget.dart';
 class StatsView extends StatefulWidget {
   const StatsView({super.key});
 
+  // Static callback for refreshing stats from external widgets
+  static VoidCallback? _refreshCallback;
+
+  static void setRefreshCallback(VoidCallback? callback) {
+    _refreshCallback = callback;
+  }
+
+  static void refreshFromExternal() {
+    _refreshCallback?.call();
+  }
+
   @override
   State<StatsView> createState() => _StatsViewState();
 }
@@ -20,10 +31,21 @@ class _StatsViewState extends State<StatsView> {
   bool _isLoading = true;
   String? _error;
 
+  void refreshStats() {
+    _loadStats();
+  }
+
   @override
   void initState() {
     super.initState();
     _loadStats();
+    StatsView.setRefreshCallback(_loadStats);
+  }
+
+  @override
+  void dispose() {
+    StatsView.setRefreshCallback(null);
+    super.dispose();
   }
 
   Future<void> _loadStats() async {
@@ -60,7 +82,7 @@ class _StatsViewState extends State<StatsView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CircularProgressIndicator(),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppConstants.spacing_16),
             Text(l10n.calculatingStatistics),
           ],
         ),
@@ -77,13 +99,13 @@ class _StatsViewState extends State<StatsView> {
               size: AppConstants.statsHugeIconSize,
               color: Theme.of(context).colorScheme.error,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppConstants.spacing_16),
             Text(
               _error!,
               textAlign: TextAlign.center,
               style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppConstants.spacing_16),
             ElevatedButton(onPressed: _loadStats, child: Text(l10n.retry)),
           ],
         ),
@@ -98,7 +120,7 @@ class _StatsViewState extends State<StatsView> {
       onRefresh: _loadStats,
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppConstants.spacing_16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -112,7 +134,7 @@ class _StatsViewState extends State<StatsView> {
             const SizedBox(height: AppConstants.spacing_24),
 
             RecentTasksWidget(stats: _stats!),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppConstants.spacing_16),
           ],
         ),
       ),

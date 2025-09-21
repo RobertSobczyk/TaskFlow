@@ -1,11 +1,12 @@
 import 'package:logger/logger.dart';
+import 'package:task_flow/core/constants/app_constants.dart';
 
 class AppLogger {
   static final Logger _logger = Logger(
     printer: PrettyPrinter(
-      methodCount: 2,
-      errorMethodCount: 8,
-      lineLength: 120,
+      methodCount: AppConstants.loggerMethodCount,
+      errorMethodCount: AppConstants.loggerErrorMethodCount,
+      lineLength: AppConstants.loggerLineLength,
       colors: true,
       printEmojis: true,
     ),

@@ -174,18 +174,18 @@ class RecentTasksWidget extends StatelessWidget {
     final now = DateTime.now();
     final difference = now.difference(completedAt);
 
-    if (difference.inDays > 0) {
-      if (difference.inDays == 1) {
+    if (difference.inDays > AppConstants.minValue) {
+      if (difference.inDays == AppConstants.singleDayDifference) {
         return l10n.oneDayAgo;
       }
       return l10n.daysAgo(difference.inDays);
-    } else if (difference.inHours > 0) {
-      if (difference.inHours == 1) {
+    } else if (difference.inHours > AppConstants.minValue) {
+      if (difference.inHours == AppConstants.singleHour) {
         return l10n.oneHourAgo;
       }
       return l10n.hoursAgo(difference.inHours);
-    } else if (difference.inMinutes > 0) {
-      if (difference.inMinutes == 1) {
+    } else if (difference.inMinutes > AppConstants.minValue) {
+      if (difference.inMinutes == AppConstants.singleMinute) {
         return l10n.oneMinuteAgo;
       }
       return l10n.minutesAgo(difference.inMinutes);
