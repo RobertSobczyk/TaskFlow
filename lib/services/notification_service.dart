@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:task_flow/core/logging/app_logger.dart';
+import 'package:task_flow/models/task.dart';
 import 'package:timezone/timezone.dart' as tz;
-import '../core/logging/app_logger.dart';
-import '../models/task.dart';
 
 class NotificationService {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =

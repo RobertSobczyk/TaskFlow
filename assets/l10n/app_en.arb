@@ -44,24 +44,11 @@
   "taskServiceNotInitialized": "TaskService not initialized",
   "settings": "Settings",
   "systemTheme": "System Theme",
-  "@systemTheme": {
-    "description": "System theme option in settings"
-  },
   "lightTheme": "Light Theme",
-  "@lightTheme": {
-    "description": "Light theme option in settings"
-  },
   "darkTheme": "Dark Theme",
-  "@darkTheme": {
-    "description": "Dark theme option in settings"
-  },
   "notificationTitle": "Task Reminder",
-  "@notificationTitle": {
-    "description": "Title for task reminder notifications"
-  },
   "notificationBody": "Don't forget: {taskTitle}",
   "@notificationBody": {
-    "description": "Body text for task reminder notifications",
     "placeholders": {
       "taskTitle": {
         "type": "String"
@@ -69,11 +56,91 @@
     }
   },
   "notificationChannelName": "Task Reminders",
-  "@notificationChannelName": {
-    "description": "Name of the notification channel for task reminders"
-  },
   "notificationChannelDescription": "Reminders for upcoming task deadlines",
-  "@notificationChannelDescription": {
-    "description": "Description of the notification channel for task reminders"
+  "statistics": "Statistics",
+  "refreshStatistics": "Refresh statistics",
+  "calculatingStatistics": "Calculating statistics...",
+  "errorLoadingStatistics": "Error loading statistics: {error}",
+  "@errorLoadingStatistics": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "retry": "Retry",
+  
+  "noStatisticsAvailable": "No statistics available",
+
+  "overview": "Overview",
+  "totalTasks": "Total Tasks",
+  "completed": "Completed",
+  "active": "Active",
+  "overdue": "Overdue",
+  "completionRate": "Completion Rate",
+  "productivityStreaks": "Productivity Streaks",
+  "currentStreak": "Current Streak",
+  "longestStreak": "Longest Streak",
+  "dayText": "day",
+  "daysText": "days",
+  "averagePerDay": "Average per Day",
+  "tasksText": "tasks",
+  "last30Days": "Last 30 days",
+
+  "good": "Good",
+
+  "low": "Low",
+  "weeklyProductivity": "Weekly Productivity",
+  "noDataAvailable": "No data available",
+  "monday": "Mon",
+  "tuesday": "Tue",
+  "wednesday": "Wed",
+  "thursday": "Thu",
+  "friday": "Fri",
+  "saturday": "Sat",
+  "sunday": "Sun",
+  "thisWeek": "This Week",
+  "dailyAvg": "Daily Avg",
+  "recentlyCompleted": "Recently Completed",
+  "noCompletedTasksYet": "No completed tasks yet",
+  "startCompletingTasks": "Start completing tasks to see them here",
+  "showingXOfYTasks": "Showing {showing} of {total} completed tasks",
+  "@showingXOfYTasks": {
+    "placeholders": {
+      "showing": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "justNow": "Just now",
+  "oneMinuteAgo": "1 minute ago",
+  "minutesAgo": "{minutes} minutes ago",
+  "@minutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "oneHourAgo": "1 hour ago",
+  "hoursAgo": "{hours} hours ago",
+  "@hoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "oneDayAgo": "1 day ago",
+  "daysAgo": "{days} days ago",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
   }
 }

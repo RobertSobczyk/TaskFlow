@@ -122,4 +122,143 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get notificationChannelDescription =>
       'Reminders for upcoming task deadlines';
+
+  @override
+  String get statistics => 'Statistics';
+
+  @override
+  String get refreshStatistics => 'Refresh statistics';
+
+  @override
+  String get calculatingStatistics => 'Calculating statistics...';
+
+  @override
+  String errorLoadingStatistics(String error) {
+    return 'Error loading statistics: $error';
+  }
+
+  @override
+  String get retry => 'Retry';
+
+  @override
+  String get noStatisticsAvailable => 'No statistics available';
+
+  @override
+  String get overview => 'Overview';
+
+  @override
+  String get totalTasks => 'Total Tasks';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get overdue => 'Overdue';
+
+  @override
+  String get completionRate => 'Completion Rate';
+
+  @override
+  String get productivityStreaks => 'Productivity Streaks';
+
+  @override
+  String get currentStreak => 'Current Streak';
+
+  @override
+  String get longestStreak => 'Longest Streak';
+
+  @override
+  String get dayText => 'day';
+
+  @override
+  String get averagePerDay => 'Average per Day';
+
+  @override
+  String get tasksText => 'tasks';
+
+  @override
+  String get last30Days => 'Last 30 days';
+
+  @override
+  String get good => 'Good';
+
+  @override
+  String get low => 'Low';
+
+  @override
+  String get weeklyProductivity => 'Weekly Productivity';
+
+  @override
+  String get noDataAvailable => 'No data available';
+
+  @override
+  String get monday => 'Mon';
+
+  @override
+  String get tuesday => 'Tue';
+
+  @override
+  String get wednesday => 'Wed';
+
+  @override
+  String get thursday => 'Thu';
+
+  @override
+  String get friday => 'Fri';
+
+  @override
+  String get saturday => 'Sat';
+
+  @override
+  String get sunday => 'Sun';
+
+  @override
+  String get thisWeek => 'This Week';
+
+  @override
+  String get dailyAvg => 'Daily Avg';
+
+  @override
+  String get recentlyCompleted => 'Recently Completed';
+
+  @override
+  String get noCompletedTasksYet => 'No completed tasks yet';
+
+  @override
+  String get startCompletingTasks => 'Start completing tasks to see them here';
+
+  @override
+  String showingXOfYTasks(int showing, int total) {
+    return 'Showing $showing of $total completed tasks';
+  }
+
+  @override
+  String get justNow => 'Just now';
+
+  @override
+  String get oneMinuteAgo => '1 minute ago';
+
+  @override
+  String minutesAgo(int minutes) {
+    return '$minutes minutes ago';
+  }
+
+  @override
+  String get oneHourAgo => '1 hour ago';
+
+  @override
+  String hoursAgo(int hours) {
+    return '$hours hours ago';
+  }
+
+  @override
+  String get oneDayAgo => '1 day ago';
+
+  @override
+  String daysAgo(int days) {
+    return '$days days ago';
+  }
 }

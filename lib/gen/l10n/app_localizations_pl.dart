@@ -123,4 +123,144 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get notificationChannelDescription =>
       'Przypomnienia o zbliżających się terminach zadań';
+
+  @override
+  String get statistics => 'Statystyki';
+
+  @override
+  String get refreshStatistics => 'Odśwież statystyki';
+
+  @override
+  String get calculatingStatistics => 'Obliczanie statystyk...';
+
+  @override
+  String errorLoadingStatistics(String error) {
+    return 'Błąd podczas ładowania statystyk: $error';
+  }
+
+  @override
+  String get retry => 'Spróbuj ponownie';
+
+  @override
+  String get noStatisticsAvailable => 'Brak dostępnych statystyk';
+
+  @override
+  String get overview => 'Przegląd';
+
+  @override
+  String get totalTasks => 'Wszystkich Zadań';
+
+  @override
+  String get completed => 'Ukończone';
+
+  @override
+  String get active => 'Aktywne';
+
+  @override
+  String get overdue => 'Spóźnione';
+
+  @override
+  String get completionRate => 'Wskaźnik Ukończenia';
+
+  @override
+  String get productivityStreaks => 'Serie Produktywności';
+
+  @override
+  String get currentStreak => 'Obecna Seria';
+
+  @override
+  String get longestStreak => 'Najdłuższa Seria';
+
+  @override
+  String get dayText => 'dzień';
+
+  @override
+  String get averagePerDay => 'Średnio dziennie';
+
+  @override
+  String get tasksText => 'zadań';
+
+  @override
+  String get last30Days => 'Ostatnie 30 dni';
+
+  @override
+  String get good => 'Dobra';
+
+  @override
+  String get low => 'Niska';
+
+  @override
+  String get weeklyProductivity => 'Produktywność Tygodniowa';
+
+  @override
+  String get noDataAvailable => 'Brak dostępnych danych';
+
+  @override
+  String get monday => 'Pon';
+
+  @override
+  String get tuesday => 'Wt';
+
+  @override
+  String get wednesday => 'Śr';
+
+  @override
+  String get thursday => 'Czw';
+
+  @override
+  String get friday => 'Pt';
+
+  @override
+  String get saturday => 'Sob';
+
+  @override
+  String get sunday => 'Nd';
+
+  @override
+  String get thisWeek => 'Ten Tydzień';
+
+  @override
+  String get dailyAvg => 'Średnia Dzienna';
+
+  @override
+  String get recentlyCompleted => 'Ostatnio Ukończone';
+
+  @override
+  String get noCompletedTasksYet => 'Brak ukończonych zadań';
+
+  @override
+  String get startCompletingTasks =>
+      'Zacznij ukończać zadania, aby je tutaj zobaczyć';
+
+  @override
+  String showingXOfYTasks(int showing, int total) {
+    return 'Wyświetlane $showing z $total ukończonych zadań';
+  }
+
+  @override
+  String get justNow => 'Przed chwilą';
+
+  @override
+  String get oneMinuteAgo => '1 minutę temu';
+
+  @override
+  String minutesAgo(int minutes) {
+    return '$minutes minut temu';
+  }
+
+  @override
+  String get oneHourAgo => '1 godzinę temu';
+
+  @override
+  String hoursAgo(int hours) {
+    return '$hours godzin temu';
+  }
+
+  @override
+  String get oneDayAgo => '1 dzień temu';
+
+  @override
+  String daysAgo(int days) {
+    return '$days dni temu';
+  }
 }

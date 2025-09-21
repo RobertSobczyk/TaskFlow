@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../gen/l10n/app_localizations.dart';
+import 'package:task_flow/gen/l10n/app_localizations.dart';
 
 class ConfirmDeleteDialog extends StatelessWidget {
   final String taskTitle;

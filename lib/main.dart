@@ -12,13 +12,13 @@ import 'widgets/settings/settings_service.dart';
 import 'widgets/settings/settings_view.dart';
 import 'widgets/task_list/task_list_view.dart';
 import 'widgets/task_list/add_task_dialog.dart';
+import 'widgets/stats/stats_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   AppLogger.info('TaskFlow app starting...');
 
-  // Initialize timezone data
   tz.initializeTimeZones();
   AppLogger.info('Timezone initialized');
 
@@ -95,6 +95,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<TaskListViewState> _taskListKey = GlobalKey();
+  int _selectedIndex = 0;
 
   void _showAddTaskDialog(BuildContext context) async {
     await showDialog(
@@ -104,12 +105,25 @@ class _MyHomePageState extends State<MyHomePage> {
     _taskListKey.currentState?.refreshTasks();
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  List<Widget> get _pages => [
+    TaskListView(key: _taskListKey),
+    const StatsView(),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(AppLocalizations.of(context)!.appTitle),
+        title: Text(_selectedIndex == 0 ? l10n.appTitle : l10n.statistics),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -119,11 +133,30 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: TaskListView(key: _taskListKey),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _showAddTaskDialog(context),
-        child: const Icon(Icons.add),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pages,
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.task_alt),
+            label: l10n.activeTasksTitle,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.analytics),
+            label: l10n.statistics,
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
+      floatingActionButton: _selectedIndex == 0 
+          ? FloatingActionButton(
+              onPressed: () => _showAddTaskDialog(context),
+              child: const Icon(Icons.add),
+            )
+          : null,
     );
   }
 }

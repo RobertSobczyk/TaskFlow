@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../core/constants/app_constants.dart';
-import '../../gen/l10n/app_localizations.dart';
-import '../../models/task.dart';
-import '../../services/task_service.dart';
+import 'package:task_flow/core/constants/app_constants.dart';
+import 'package:task_flow/gen/l10n/app_localizations.dart';
+import 'package:task_flow/models/task.dart';
+import 'package:task_flow/services/task_service.dart';
 
 class EditTaskDialog extends StatefulWidget {
   final Task task;

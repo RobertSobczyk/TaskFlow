@@ -44,36 +44,87 @@
   "taskServiceNotInitialized": "TaskService nie został zainicjalizowany",
   "settings": "Ustawienia",
   "systemTheme": "Motyw Systemowy",
-  "@systemTheme": {
-    "description": "Opcja motywu systemowego w ustawieniach"
-  },
   "lightTheme": "Motyw Jasny",
-  "@lightTheme": {
-    "description": "Opcja motywu jasnego w ustawieniach"
-  },
   "darkTheme": "Motyw Ciemny",
-  "@darkTheme": {
-    "description": "Opcja motywu ciemnego w ustawieniach"
-  },
   "notificationTitle": "Przypomnienie o Zadaniu",
-  "@notificationTitle": {
-    "description": "Tytuł powiadomienia przypominającego o zadaniu"
-  },
   "notificationBody": "Nie zapomnij: {taskTitle}",
-  "@notificationBody": {
-    "description": "Treść powiadomienia przypominającego o zadaniu",
+ 
+  "notificationChannelName": "Przypomnienia o Zadaniach",
+  "notificationChannelDescription": "Przypomnienia o zbliżających się terminach zadań",
+  "statistics": "Statystyki",
+  "refreshStatistics": "Odśwież statystyki",
+  "calculatingStatistics": "Obliczanie statystyk...",
+  "errorLoadingStatistics": "Błąd podczas ładowania statystyk: {error}",
+  
+  "retry": "Spróbuj ponownie",
+  "noStatisticsAvailable": "Brak dostępnych statystyk",
+  "overview": "Przegląd",
+  "totalTasks": "Wszystkich Zadań",
+  "completed": "Ukończone",
+  "active": "Aktywne",
+  "overdue": "Spóźnione",
+  "completionRate": "Wskaźnik Ukończenia",
+  "productivityStreaks": "Serie Produktywności",
+  "currentStreak": "Obecna Seria",
+  "longestStreak": "Najdłuższa Seria",
+  "dayText": "dzień",
+  "daysText": "dni",
+  "averagePerDay": "Średnio dziennie",
+  "tasksText": "zadań",
+  "last30Days": "Ostatnie 30 dni",
+  "good": "Dobra",
+  "low": "Niska",
+  "weeklyProductivity": "Produktywność Tygodniowa",
+  "noDataAvailable": "Brak dostępnych danych",
+  "monday": "Pon",
+  "tuesday": "Wt",
+  "wednesday": "Śr",
+  "thursday": "Czw",
+  "friday": "Pt",
+  "saturday": "Sob",
+  "sunday": "Nd",
+  "thisWeek": "Ten Tydzień",
+  "dailyAvg": "Średnia Dzienna",
+  "recentlyCompleted": "Ostatnio Ukończone",
+  "noCompletedTasksYet": "Brak ukończonych zadań",
+  "startCompletingTasks": "Zacznij ukończać zadania, aby je tutaj zobaczyć",
+  "showingXOfYTasks": "Wyświetlane {showing} z {total} ukończonych zadań",
+  "@showingXOfYTasks": {
     "placeholders": {
-      "taskTitle": {
-        "type": "String"
+      "showing": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
       }
     }
   },
-  "notificationChannelName": "Przypomnienia o Zadaniach",
-  "@notificationChannelName": {
-    "description": "Nazwa kanału powiadomień dla przypomnień o zadaniach"
+  "justNow": "Przed chwilą",
+  "oneMinuteAgo": "1 minutę temu",
+  "minutesAgo": "{minutes} minut temu",
+  "@minutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
   },
-  "notificationChannelDescription": "Przypomnienia o zbliżających się terminach zadań",
-  "@notificationChannelDescription": {
-    "description": "Opis kanału powiadomień dla przypomnień o zadaniach"
+  "oneHourAgo": "1 godzinę temu",
+  "hoursAgo": "{hours} godzin temu",
+  "@hoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "oneDayAgo": "1 dzień temu",
+  "daysAgo": "{days} dni temu",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
   }
 }

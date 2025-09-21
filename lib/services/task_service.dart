@@ -1,8 +1,8 @@
 import 'package:hive/hive.dart';
 import 'package:task_flow/core/constants/app_constants.dart';
 import 'package:task_flow/core/logging/app_logger.dart';
+import 'package:task_flow/models/task.dart';
 
-import '../models/task.dart';
 import 'notification_service.dart';
 
 class TaskService {
@@ -60,7 +60,9 @@ class TaskService {
         notificationTitle: notificationTitle ?? 'Task Reminder',
         notificationBody: notificationBody,
         channelName: notificationChannelName ?? 'Task Reminders',
-        channelDescription: notificationChannelDescription ?? 'Notifications for task reminders',
+        channelDescription:
+            notificationChannelDescription ??
+            'Notifications for task reminders',
       );
     }
     AppLogger.info('TaskService: Task added successfully');
@@ -88,7 +90,9 @@ class TaskService {
         notificationTitle: notificationTitle ?? 'Task Reminder',
         notificationBody: notificationBody,
         channelName: notificationChannelName ?? 'Task Reminders',
-        channelDescription: notificationChannelDescription ?? 'Notifications for task reminders',
+        channelDescription:
+            notificationChannelDescription ??
+            'Notifications for task reminders',
       );
     }
     AppLogger.info('Task updated successfully');

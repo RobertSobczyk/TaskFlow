@@ -272,47 +272,305 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get settings;
 
-  /// System theme option in settings
+  /// No description provided for @systemTheme.
   ///
   /// In en, this message translates to:
   /// **'System Theme'**
   String get systemTheme;
 
-  /// Light theme option in settings
+  /// No description provided for @lightTheme.
   ///
   /// In en, this message translates to:
   /// **'Light Theme'**
   String get lightTheme;
 
-  /// Dark theme option in settings
+  /// No description provided for @darkTheme.
   ///
   /// In en, this message translates to:
   /// **'Dark Theme'**
   String get darkTheme;
 
-  /// Title for task reminder notifications
+  /// No description provided for @notificationTitle.
   ///
   /// In en, this message translates to:
   /// **'Task Reminder'**
   String get notificationTitle;
 
-  /// Body text for task reminder notifications
+  /// No description provided for @notificationBody.
   ///
   /// In en, this message translates to:
   /// **'Don\'t forget: {taskTitle}'**
   String notificationBody(String taskTitle);
 
-  /// Name of the notification channel for task reminders
+  /// No description provided for @notificationChannelName.
   ///
   /// In en, this message translates to:
   /// **'Task Reminders'**
   String get notificationChannelName;
 
-  /// Description of the notification channel for task reminders
+  /// No description provided for @notificationChannelDescription.
   ///
   /// In en, this message translates to:
   /// **'Reminders for upcoming task deadlines'**
   String get notificationChannelDescription;
+
+  /// No description provided for @statistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get statistics;
+
+  /// No description provided for @refreshStatistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh statistics'**
+  String get refreshStatistics;
+
+  /// No description provided for @calculatingStatistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculating statistics...'**
+  String get calculatingStatistics;
+
+  /// No description provided for @errorLoadingStatistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading statistics: {error}'**
+  String errorLoadingStatistics(String error);
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// No description provided for @noStatisticsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No statistics available'**
+  String get noStatisticsAvailable;
+
+  /// No description provided for @overview.
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get overview;
+
+  /// No description provided for @totalTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Tasks'**
+  String get totalTasks;
+
+  /// No description provided for @completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get completed;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// No description provided for @overdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get overdue;
+
+  /// No description provided for @completionRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion Rate'**
+  String get completionRate;
+
+  /// No description provided for @productivityStreaks.
+  ///
+  /// In en, this message translates to:
+  /// **'Productivity Streaks'**
+  String get productivityStreaks;
+
+  /// No description provided for @currentStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Streak'**
+  String get currentStreak;
+
+  /// No description provided for @longestStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Longest Streak'**
+  String get longestStreak;
+
+  /// No description provided for @dayText.
+  ///
+  /// In en, this message translates to:
+  /// **'day'**
+  String get dayText;
+
+  /// No description provided for @averagePerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Average per Day'**
+  String get averagePerDay;
+
+  /// No description provided for @tasksText.
+  ///
+  /// In en, this message translates to:
+  /// **'tasks'**
+  String get tasksText;
+
+  /// No description provided for @last30Days.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 30 days'**
+  String get last30Days;
+
+  /// No description provided for @good.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get good;
+
+  /// No description provided for @low.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get low;
+
+  /// No description provided for @weeklyProductivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly Productivity'**
+  String get weeklyProductivity;
+
+  /// No description provided for @noDataAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No data available'**
+  String get noDataAvailable;
+
+  /// No description provided for @monday.
+  ///
+  /// In en, this message translates to:
+  /// **'Mon'**
+  String get monday;
+
+  /// No description provided for @tuesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Tue'**
+  String get tuesday;
+
+  /// No description provided for @wednesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Wed'**
+  String get wednesday;
+
+  /// No description provided for @thursday.
+  ///
+  /// In en, this message translates to:
+  /// **'Thu'**
+  String get thursday;
+
+  /// No description provided for @friday.
+  ///
+  /// In en, this message translates to:
+  /// **'Fri'**
+  String get friday;
+
+  /// No description provided for @saturday.
+  ///
+  /// In en, this message translates to:
+  /// **'Sat'**
+  String get saturday;
+
+  /// No description provided for @sunday.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun'**
+  String get sunday;
+
+  /// No description provided for @thisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'This Week'**
+  String get thisWeek;
+
+  /// No description provided for @dailyAvg.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Avg'**
+  String get dailyAvg;
+
+  /// No description provided for @recentlyCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently Completed'**
+  String get recentlyCompleted;
+
+  /// No description provided for @noCompletedTasksYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No completed tasks yet'**
+  String get noCompletedTasksYet;
+
+  /// No description provided for @startCompletingTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Start completing tasks to see them here'**
+  String get startCompletingTasks;
+
+  /// No description provided for @showingXOfYTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Showing {showing} of {total} completed tasks'**
+  String showingXOfYTasks(int showing, int total);
+
+  /// No description provided for @justNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Just now'**
+  String get justNow;
+
+  /// No description provided for @oneMinuteAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'1 minute ago'**
+  String get oneMinuteAgo;
+
+  /// No description provided for @minutesAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} minutes ago'**
+  String minutesAgo(int minutes);
+
+  /// No description provided for @oneHourAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'1 hour ago'**
+  String get oneHourAgo;
+
+  /// No description provided for @hoursAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} hours ago'**
+  String hoursAgo(int hours);
+
+  /// No description provided for @oneDayAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'1 day ago'**
+  String get oneDayAgo;
+
+  /// No description provided for @daysAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days ago'**
+  String daysAgo(int days);
 }
 
 class _AppLocalizationsDelegate
