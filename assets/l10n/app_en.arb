@@ -1,0 +1,58 @@
+{
+  "@@locale": "en",
+  "appName": "TaskFlow",
+  "appTitle": "Task Flow - Todo App",
+  "addNewTaskTitle": "Add New Task",
+  "editTaskTitle": "Edit Task",
+  "deleteTaskTitle": "Delete Task",
+  "taskTitleLabel": "Task Title",
+  "descriptionLabel": "Description (optional)",
+  "cancelButtonText": "Cancel",
+  "addTaskButtonText": "Add Task",
+  "updateTaskButtonText": "Update Task",
+  "deleteButtonText": "Delete",
+  "activeTasksTitle": "Active Tasks",
+  "completedTasksTitle": "Completed Tasks",
+  "noTasksMessage": "No tasks yet. Add one using the + button!",
+  "pleaseEnterTitleError": "Please enter a task title",
+  "taskAddedSuccessMessage": "Task added successfully!",
+  "taskUpdatedSuccessMessage": "Task updated successfully!",
+  "deleteTaskConfirmationMessage": "Are you sure you want to delete \"{taskTitle}\"?",
+  "@deleteTaskConfirmationMessage": {
+    "placeholders": {
+      "taskTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "overdueByText": "Overdue by",
+  "dueInText": "Due in",
+  "daysText": "days",
+  "hoursText": "hours",
+  "minutesText": "minutes",
+  "nowText": "now",
+  "deadlinePrefix": "Deadline: ",
+  "timePrefix": "Time: ",
+  "taskDeletedMessage": "Task \"{taskTitle}\" deleted",
+  "@taskDeletedMessage": {
+    "placeholders": {
+      "taskTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "taskServiceNotInitialized": "TaskService not initialized",
+  "settings": "Settings",
+  "systemTheme": "System Theme",
+  "@systemTheme": {
+    "description": "System theme option in settings"
+  },
+  "lightTheme": "Light Theme",
+  "@lightTheme": {
+    "description": "Light theme option in settings"
+  },
+  "darkTheme": "Dark Theme",
+  "@darkTheme": {
+    "description": "Dark theme option in settings"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "@@locale": "pl",
+  "appName": "TaskFlow",
+  "appTitle": "Task Flow - Aplikacja Todo",
+  "addNewTaskTitle": "Dodaj Nowe Zadanie",
+  "editTaskTitle": "Edytuj Zadanie",
+  "deleteTaskTitle": "Usuń Zadanie",
+  "taskTitleLabel": "Tytuł Zadania",
+  "descriptionLabel": "Opis (opcjonalny)",
+  "cancelButtonText": "Anuluj",
+  "addTaskButtonText": "Dodaj Zadanie",
+  "updateTaskButtonText": "Aktualizuj Zadanie",
+  "deleteButtonText": "Usuń",
+  "activeTasksTitle": "Aktywne Zadania",
+  "completedTasksTitle": "Ukończone Zadania",
+  "noTasksMessage": "Brak zadań. Dodaj jedno używając przycisku +!",
+  "pleaseEnterTitleError": "Proszę podać tytuł zadania",
+  "taskAddedSuccessMessage": "Zadanie dodane pomyślnie!",
+  "taskUpdatedSuccessMessage": "Zadanie zaktualizowane pomyślnie!",
+  "deleteTaskConfirmationMessage": "Czy na pewno chcesz usunąć \"{taskTitle}\"?",
+  "@deleteTaskConfirmationMessage": {
+    "placeholders": {
+      "taskTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "overdueByText": "Spóźnione o",
+  "dueInText": "Za",
+  "daysText": "dni",
+  "hoursText": "godzin",
+  "minutesText": "minut",
+  "nowText": "teraz",
+  "deadlinePrefix": "Termin: ",
+  "timePrefix": "Czas: ",
+  "taskDeletedMessage": "Zadanie \"{taskTitle}\" zostało usunięte",
+  "@taskDeletedMessage": {
+    "placeholders": {
+      "taskTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "taskServiceNotInitialized": "TaskService nie został zainicjalizowany",
+  "settings": "Ustawienia",
+  "systemTheme": "Motyw Systemowy",
+  "@systemTheme": {
+    "description": "Opcja motywu systemowego w ustawieniach"
+  },
+  "lightTheme": "Motyw Jasny",
+  "@lightTheme": {
+    "description": "Opcja motywu jasnego w ustawieniach"
+  },
+  "darkTheme": "Motyw Ciemny",
+  "@darkTheme": {
+    "description": "Opcja motywu ciemnego w ustawieniach"
+  }
+}
