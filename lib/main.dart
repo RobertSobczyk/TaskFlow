@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:timezone/data/latest.dart' as tz;
 import 'package:task_flow/core/logging/app_logger.dart';
 import 'gen/l10n/app_localizations.dart';
 import 'models/task.dart';
@@ -16,6 +17,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   AppLogger.info('TaskFlow app starting...');
+
+  // Initialize timezone data
+  tz.initializeTimeZones();
+  AppLogger.info('Timezone initialized');
 
   final settingsController = SettingsController(SettingsService());
   await settingsController.loadSettings();
