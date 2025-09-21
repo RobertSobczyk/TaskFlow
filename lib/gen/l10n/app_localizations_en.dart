@@ -45,6 +45,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get activeTasksTitle => 'Active Tasks';
 
   @override
+  String get tasksTitle => 'Tasks';
+
+  @override
   String get completedTasksTitle => 'Completed Tasks';
 
   @override
@@ -261,4 +264,100 @@ class AppLocalizationsEn extends AppLocalizations {
   String daysAgo(int days) {
     return '$days days ago';
   }
+
+  @override
+  String get weatherLoadingText => 'Loading weather...';
+
+  @override
+  String get weatherUnavailableText => 'Weather unavailable';
+
+  @override
+  String get refreshWeatherTooltip => 'Refresh weather';
+
+  @override
+  String get mondayFull => 'Monday';
+
+  @override
+  String get tuesdayFull => 'Tuesday';
+
+  @override
+  String get wednesdayFull => 'Wednesday';
+
+  @override
+  String get thursdayFull => 'Thursday';
+
+  @override
+  String get fridayFull => 'Friday';
+
+  @override
+  String get saturdayFull => 'Saturday';
+
+  @override
+  String get sundayFull => 'Sunday';
+
+  @override
+  String get weatherConditionClear => 'Clear Sky';
+
+  @override
+  String get weatherConditionClouds => 'Cloudy';
+
+  @override
+  String get weatherConditionRain => 'Rain';
+
+  @override
+  String get weatherConditionDrizzle => 'Drizzle';
+
+  @override
+  String get weatherConditionThunderstorm => 'Thunderstorm';
+
+  @override
+  String get weatherConditionSnow => 'Snow';
+
+  @override
+  String get weatherConditionMist => 'Mist';
+
+  @override
+  String get weatherConditionSmoke => 'Smoke';
+
+  @override
+  String get weatherConditionHaze => 'Haze';
+
+  @override
+  String get weatherConditionDust => 'Dust';
+
+  @override
+  String get weatherConditionFog => 'Fog';
+
+  @override
+  String get weatherConditionSand => 'Sand';
+
+  @override
+  String get weatherConditionAsh => 'Ash';
+
+  @override
+  String get weatherConditionSquall => 'Squall';
+
+  @override
+  String get weatherConditionTornado => 'Tornado';
+
+  @override
+  String get temperature => 'Temperature';
+
+  @override
+  String get humidity => 'Humidity';
+
+  @override
+  String get windSpeed => 'Wind Speed';
+
+  @override
+  String get feelsLike => 'Feels Like';
+
+  @override
+  String get visibility => 'Visibility';
+
+  @override
+  String get pressure => 'Pressure';
+
+  @override
+  String get uvIndex => 'UV Index';
 }

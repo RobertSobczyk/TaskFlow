@@ -12,6 +12,7 @@
   "updateTaskButtonText": "Update Task",
   "deleteButtonText": "Delete",
   "activeTasksTitle": "Active Tasks",
+  "tasksTitle": "Tasks",
   "completedTasksTitle": "Completed Tasks",
   "noTasksMessage": "No tasks yet. Add one using the + button!",
   "pleaseEnterTitleError": "Please enter a task title",
@@ -142,5 +143,41 @@
         "type": "int"
       }
     }
-  }
+  },
+
+  "weatherLoadingText": "Loading weather...",
+  "weatherUnavailableText": "Weather unavailable",
+  "refreshWeatherTooltip": "Refresh weather",
+
+  "mondayFull": "Monday",
+  "tuesdayFull": "Tuesday",
+  "wednesdayFull": "Wednesday",
+  "thursdayFull": "Thursday",
+  "fridayFull": "Friday",
+  "saturdayFull": "Saturday",
+  "sundayFull": "Sunday",
+
+  "weatherConditionClear": "Clear Sky",
+  "weatherConditionClouds": "Cloudy",
+  "weatherConditionRain": "Rain",
+  "weatherConditionDrizzle": "Drizzle",
+  "weatherConditionThunderstorm": "Thunderstorm",
+  "weatherConditionSnow": "Snow",
+  "weatherConditionMist": "Mist",
+  "weatherConditionSmoke": "Smoke",
+  "weatherConditionHaze": "Haze",
+  "weatherConditionDust": "Dust",
+  "weatherConditionFog": "Fog",
+  "weatherConditionSand": "Sand",
+  "weatherConditionAsh": "Ash",
+  "weatherConditionSquall": "Squall",
+  "weatherConditionTornado": "Tornado",
+
+  "temperature": "Temperature",
+  "humidity": "Humidity",
+  "windSpeed": "Wind Speed",
+  "feelsLike": "Feels Like",
+  "visibility": "Visibility",
+  "pressure": "Pressure",
+  "uvIndex": "UV Index"
 }

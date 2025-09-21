@@ -170,6 +170,12 @@ abstract class AppLocalizations {
   /// **'Active Tasks'**
   String get activeTasksTitle;
 
+  /// No description provided for @tasksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks'**
+  String get tasksTitle;
+
   /// No description provided for @completedTasksTitle.
   ///
   /// In en, this message translates to:
@@ -571,6 +577,198 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{days} days ago'**
   String daysAgo(int days);
+
+  /// No description provided for @weatherLoadingText.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading weather...'**
+  String get weatherLoadingText;
+
+  /// No description provided for @weatherUnavailableText.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather unavailable'**
+  String get weatherUnavailableText;
+
+  /// No description provided for @refreshWeatherTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh weather'**
+  String get refreshWeatherTooltip;
+
+  /// No description provided for @mondayFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Monday'**
+  String get mondayFull;
+
+  /// No description provided for @tuesdayFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Tuesday'**
+  String get tuesdayFull;
+
+  /// No description provided for @wednesdayFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Wednesday'**
+  String get wednesdayFull;
+
+  /// No description provided for @thursdayFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Thursday'**
+  String get thursdayFull;
+
+  /// No description provided for @fridayFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Friday'**
+  String get fridayFull;
+
+  /// No description provided for @saturdayFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Saturday'**
+  String get saturdayFull;
+
+  /// No description provided for @sundayFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunday'**
+  String get sundayFull;
+
+  /// No description provided for @weatherConditionClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Sky'**
+  String get weatherConditionClear;
+
+  /// No description provided for @weatherConditionClouds.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloudy'**
+  String get weatherConditionClouds;
+
+  /// No description provided for @weatherConditionRain.
+  ///
+  /// In en, this message translates to:
+  /// **'Rain'**
+  String get weatherConditionRain;
+
+  /// No description provided for @weatherConditionDrizzle.
+  ///
+  /// In en, this message translates to:
+  /// **'Drizzle'**
+  String get weatherConditionDrizzle;
+
+  /// No description provided for @weatherConditionThunderstorm.
+  ///
+  /// In en, this message translates to:
+  /// **'Thunderstorm'**
+  String get weatherConditionThunderstorm;
+
+  /// No description provided for @weatherConditionSnow.
+  ///
+  /// In en, this message translates to:
+  /// **'Snow'**
+  String get weatherConditionSnow;
+
+  /// No description provided for @weatherConditionMist.
+  ///
+  /// In en, this message translates to:
+  /// **'Mist'**
+  String get weatherConditionMist;
+
+  /// No description provided for @weatherConditionSmoke.
+  ///
+  /// In en, this message translates to:
+  /// **'Smoke'**
+  String get weatherConditionSmoke;
+
+  /// No description provided for @weatherConditionHaze.
+  ///
+  /// In en, this message translates to:
+  /// **'Haze'**
+  String get weatherConditionHaze;
+
+  /// No description provided for @weatherConditionDust.
+  ///
+  /// In en, this message translates to:
+  /// **'Dust'**
+  String get weatherConditionDust;
+
+  /// No description provided for @weatherConditionFog.
+  ///
+  /// In en, this message translates to:
+  /// **'Fog'**
+  String get weatherConditionFog;
+
+  /// No description provided for @weatherConditionSand.
+  ///
+  /// In en, this message translates to:
+  /// **'Sand'**
+  String get weatherConditionSand;
+
+  /// No description provided for @weatherConditionAsh.
+  ///
+  /// In en, this message translates to:
+  /// **'Ash'**
+  String get weatherConditionAsh;
+
+  /// No description provided for @weatherConditionSquall.
+  ///
+  /// In en, this message translates to:
+  /// **'Squall'**
+  String get weatherConditionSquall;
+
+  /// No description provided for @weatherConditionTornado.
+  ///
+  /// In en, this message translates to:
+  /// **'Tornado'**
+  String get weatherConditionTornado;
+
+  /// No description provided for @temperature.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature'**
+  String get temperature;
+
+  /// No description provided for @humidity.
+  ///
+  /// In en, this message translates to:
+  /// **'Humidity'**
+  String get humidity;
+
+  /// No description provided for @windSpeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Wind Speed'**
+  String get windSpeed;
+
+  /// No description provided for @feelsLike.
+  ///
+  /// In en, this message translates to:
+  /// **'Feels Like'**
+  String get feelsLike;
+
+  /// No description provided for @visibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Visibility'**
+  String get visibility;
+
+  /// No description provided for @pressure.
+  ///
+  /// In en, this message translates to:
+  /// **'Pressure'**
+  String get pressure;
+
+  /// No description provided for @uvIndex.
+  ///
+  /// In en, this message translates to:
+  /// **'UV Index'**
+  String get uvIndex;
 }
 
 class _AppLocalizationsDelegate

@@ -12,6 +12,7 @@
   "updateTaskButtonText": "Aktualizuj Zadanie",
   "deleteButtonText": "Usuń",
   "activeTasksTitle": "Aktywne Zadania",
+  "tasksTitle": "Zadania",
   "completedTasksTitle": "Ukończone Zadania",
   "noTasksMessage": "Brak zadań. Dodaj jedno używając przycisku +!",
   "pleaseEnterTitleError": "Proszę podać tytuł zadania",
@@ -126,5 +127,41 @@
         "type": "int"
       }
     }
-  }
+  },
+
+  "weatherLoadingText": "Ładowanie pogody...",
+  "weatherUnavailableText": "Pogoda niedostępna",
+  "refreshWeatherTooltip": "Odśwież pogodę",
+
+  "mondayFull": "Poniedziałek",
+  "tuesdayFull": "Wtorek",
+  "wednesdayFull": "Środa",
+  "thursdayFull": "Czwartek",
+  "fridayFull": "Piątek",
+  "saturdayFull": "Sobota",
+  "sundayFull": "Niedziela",
+
+  "weatherConditionClear": "Bezchmurnie",
+  "weatherConditionClouds": "Pochmurno",
+  "weatherConditionRain": "Deszcz",
+  "weatherConditionDrizzle": "Mżawka",
+  "weatherConditionThunderstorm": "Burza",
+  "weatherConditionSnow": "Śnieg",
+  "weatherConditionMist": "Mgła",
+  "weatherConditionSmoke": "Dym",
+  "weatherConditionHaze": "Zamglenie",
+  "weatherConditionDust": "Pył",
+  "weatherConditionFog": "Mgła",
+  "weatherConditionSand": "Piasek",
+  "weatherConditionAsh": "Popiół",
+  "weatherConditionSquall": "Szkwał",
+  "weatherConditionTornado": "Tornado",
+
+  "temperature": "Temperatura",
+  "humidity": "Wilgotność",
+  "windSpeed": "Prędkość wiatru",
+  "feelsLike": "Odczuwalna",
+  "visibility": "Widoczność",
+  "pressure": "Ciśnienie",
+  "uvIndex": "Indeks UV"
 }
